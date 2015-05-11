@@ -1,0 +1,9 @@
+body {
+    background-color: #fcfcfc;
+}
+
+#field {
+    /*width: 800px;*/
+    margin-left: auto;
+    margin-right: auto;
+}
