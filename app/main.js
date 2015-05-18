@@ -2,7 +2,8 @@ angular.module('metro', [
   'ui.router',
   'ngAnimate',
   'listSites',
-  'displayProject'
+  'displayProject',
+  'uiGmapgoogle-maps'
 ])
 
 .config(function($stateProvider, $urlRouterProvider) {

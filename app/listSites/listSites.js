@@ -13,6 +13,8 @@ angular.module('listSites', [
           templateUrl: 'pages/select.tmpl.html'
         },
         'other@': {
+          controller: 'MainCtrl',
+          templateUrl: 'pages/selectList.tmpl.html'
 
         }
       }
@@ -21,7 +23,7 @@ angular.module('listSites', [
 
 .controller('MainCtrl', ['$scope', '$stateParams', '$http', '$log', function($scope,$stateParams,$http,$log){
 
-  $scope.hello = "hello";
+
 
   $http
     .get('php/pickUp.php')
