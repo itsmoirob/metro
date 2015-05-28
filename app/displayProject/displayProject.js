@@ -2,7 +2,8 @@ angular.module('displayProject', [
   'ui.router',
   'ngAnimate',
   'listSites',
-  'uiGmapgoogle-maps'
+  'uiGmapgoogle-maps',
+  'highcharts-ng'
 ])
 
 .config(function($stateProvider){
@@ -42,9 +43,46 @@ angular.module('displayProject', [
           },
           options: { draggable: true }
         };
+        var arrayData = {
+           data: []
+         };
+
+         for (var i = 0; i < result.generation.length; i++) {
+           arrayData.data.push([result.generation[i].timeU,result.generation[i].generation]);
+         }
+
+
+           $scope.generationArray = arrayData;
+
+           $scope.chartConfig = {
+                 options: {
+                     chart: {
+                         zoomType: 'x'
+                     },
+                     rangeSelector: {
+                         enabled: true
+                     },
+                     navigator: {
+                         enabled: true
+                     }
+                 },
+                 series: [],
+                 title: {
+                     text: 'Hello'
+                 },
+                 useHighStocks: true
+             };
+
+             $scope.test = 1;
+           $scope.chartConfig.series.push($scope.generationArray);
 
 
     });
+
+
+
+
+
 
 
 

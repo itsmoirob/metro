@@ -1,0 +1,19 @@
+{
+  "name": "metro",
+  "version": "0.0.1",
+  "description": "A method of collecting data from multiple monitoring sites",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itsmoirob/metro.git"
+  },
+  "author": "Robbie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/itsmoirob/metro/issues"
+  },
+  "homepage": "https://github.com/itsmoirob/metro#readme"
+}
