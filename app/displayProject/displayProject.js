@@ -43,48 +43,30 @@ angular.module('displayProject', [
           },
           options: { draggable: true }
         };
-        var arrayData = {
-           data: []
-         };
-
-         for (var i = 0; i < result.generation.length; i++) {
-           arrayData.data.push([result.generation[i].timeU,result.generation[i].generation]);
-         }
 
 
-           $scope.generationArray = arrayData;
+        //  $scope.generationArray = result.generation.generation_4;
 
-           $scope.chartConfig = {
-                 options: {
-                     chart: {
-                         zoomType: 'x'
-                     },
-                     rangeSelector: {
-                         enabled: true
-                     },
-                     navigator: {
-                         enabled: true
-                     }
-                 },
-                 series: [],
-                 title: {
-                     text: 'Hello'
-                 },
-                 useHighStocks: true
-             };
-
-             $scope.test = 1;
-           $scope.chartConfig.series.push($scope.generationArray);
-
+         $scope.chartConfig = {
+               options: {
+                   chart: {
+                       zoomType: 'x'
+                   },
+                   rangeSelector: {
+                       enabled: true
+                   },
+                   navigator: {
+                       enabled: true
+                   }
+               },
+               series: result.generation,
+               title: {
+                   text: 'Generation at inverter'
+               },
+               useHighStocks: true
+           };
 
     });
-
-
-
-
-
-
-
 
 }])
 

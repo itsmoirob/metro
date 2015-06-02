@@ -1,6 +1,4 @@
-<p>Generation: {{ generationArray }}</p>
-<p>chart series: {{ chartConfig.series }}</p>
-<p>{{ map }}</p>
+<h1>Welcome</h1>
 
 <div class="col s6">
     <highchart id="chart1" config="chartConfig" class="span10"></highchart>
@@ -12,3 +10,6 @@
   <ui-gmap-marker coords='marker.coords' idkey='marker.id'>
         </ui-gmap-marker>
 </ui-gmap-google-map>
+
+<p>Test: {{ currentDisplaySite.generation | json }}</p>
+<p>All: {{ currentDisplaySite | json }}</p>
