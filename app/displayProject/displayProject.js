@@ -8,8 +8,8 @@ angular.module('displayProject', [
 
 .config(function($stateProvider){
   $stateProvider
-    .state('parent.displayProject', {
-      url:'/site/:siteResult',
+    .state('parent.displaySummaryProject', {
+      url:'/site/summary/:siteResult',
       views: {
         'display@': {
           controller: 'DisplayCtrl',
@@ -20,7 +20,47 @@ angular.module('displayProject', [
           templateUrl: 'pages/displaySiteList.tmpl.html'
         }
       }
-    });
+    })
+    .state('parent.displayGenerationProject', {
+      url:'/site/generation/:siteResult',
+      views: {
+        'display@': {
+          controller: 'DisplayCtrl',
+          templateUrl: 'pages/displaySiteGeneration.tmpl.html'
+        },
+        'other@': {
+          controller: 'DisplayCtrl',
+          templateUrl: 'pages/displaySiteList.tmpl.html'
+        }
+      }
+    })
+    .state('parent.displayFinanceProject', {
+      url:'/site/finance/:siteResult',
+      views: {
+        'display@': {
+          controller: 'DisplayCtrl',
+          templateUrl: 'pages/displaySiteFinance.tmpl.html'
+        },
+        'other@': {
+          controller: 'DisplayCtrl',
+          templateUrl: 'pages/displaySiteList.tmpl.html'
+        }
+      }
+    })
+    .state('parent.displayAdminProject', {
+      url:'/site/admin/:siteResult',
+      views: {
+        'display@': {
+          controller: 'DisplayCtrl',
+          templateUrl: 'pages/displaySiteAdmin.tmpl.html'
+        },
+        'other@': {
+          controller: 'DisplayCtrl',
+          templateUrl: 'pages/displaySiteList.tmpl.html'
+        }
+      }
+    })
+    ;
 })
 
 .controller('DisplayCtrl', ['$scope', '$stateParams', '$http', '$log', '$state', function($scope,$stateParams,$http,$log,$state){

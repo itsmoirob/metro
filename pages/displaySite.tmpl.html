@@ -1,15 +1,18 @@
-<h1>Welcome</h1>
+<h1>Welcome to {{ currentDisplaySite.site[0].name }}</h1>
 
+<h3>Summary</h3>
+<p>TIC {{ currentDisplaySite.site[0].tic_mwp }} MWp</p>
+<p>Co2 savings {{ currentDisplaySite.site[0].carbon_saved_tones }} tonnes</p>
+<p>{{ currentDisplaySite.site[0].homes_powered }} homes powered </p>
+
+<h3>Week generation</h3>
 <div class="col s6">
-    <highchart id="chart1" config="chartConfig" class="span10"></highchart>
-  </div>
+  <highchart id="chart1" config="chartConfig" class="span10"></highchart>
+</div>
 
-
+<h3>Location</h3>
 
 <ui-gmap-google-map center='map.center' zoom='map.zoom'>
   <ui-gmap-marker coords='marker.coords' idkey='marker.id'>
-        </ui-gmap-marker>
+  </ui-gmap-marker>
 </ui-gmap-google-map>
-
-<p>Test: {{ currentDisplaySite.generation | json }}</p>
-<p>All: {{ currentDisplaySite | json }}</p>

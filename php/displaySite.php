@@ -17,7 +17,17 @@
 	// Put site details together based on $id
 	$data['site'] = [];
 	$query = mysqli_query($conn,
-	"SELECT `name`,`latitude`,`longitude`,`location`,`tic_mwp`,`dnc_mw` FROM `top_table` WHERE `id` = '$id';"
+	"SELECT `name`,
+	`id`,
+	`latitude`,
+	`longitude`,
+	`location`,
+	`tic_mwp`,
+	`dnc_mw`,
+	`homes_powered`,
+	`carbon_saved_tones`
+	FROM `top_table`
+	WHERE `id` = '$id';"
 	);
 	WHILE($r = mysqli_fetch_assoc($query)) {
 		$data['site'][] = $r;
@@ -36,14 +46,14 @@
 
 	// Get site generation based on $id
 	$i = 1;
-	while ($i<20) {
+	while ($i<5) {
 		$data['generation']['generation_'.$i] = [];
 		$data['generation']['generation_'.$i]['id'] = $i;
 		$query = mysqli_query($conn,
 		"select
 		UNIX_TIMESTAMP(cast(`date` as datetime) + cast(`time` as time))*1000 as `timeU`,
 		`generation`
-		from `inverter_site_generation_1`
+		from `inverter_site_generation_$id`
 		where `inverter_number` = $i ;"
 		);
 		WHILE($r = mysqli_fetch_row($query)) {
