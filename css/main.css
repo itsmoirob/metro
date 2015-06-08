@@ -28,3 +28,8 @@ body {
 }
 
 .angular-google-map-container { height: 400px; }
+
+.metro {
+  background-color: #751056;
+  color: white;
+}
