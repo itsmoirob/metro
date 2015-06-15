@@ -84,30 +84,47 @@ angular.module('displayProject', [
           options: { draggable: true }
         };
 
+        // Chart for inverter generation
+        $scope.chartConfig = {
+          options: {
+           chart: {
+             zoomType: 'x'
+           },
+           rangeSelector: {
+             enabled: true
+           },
+           navigator: {
+             enabled: true
+           }
+         },
+         series: result.generation,
+         title: {
+           text: 'Generation at inverter'
+         },
+         useHighStocks: true
+       };
 
-        //  $scope.generationArray = result.generation.generation_4;
+      //  Chart for export generation
+       $scope.chartExport = {
+         options: {
+           chart: {
+             zoomType: 'x'
+           },
+           rangeSelector: {
+             enabled: true
+           },
+           navigator: {
+             enabled: true
+           }
+         },
+         series: result.export,
+         title: {
+           text: 'Generation at export'
+         },
+         useHighStocks: true
+       };
+     });
 
-         $scope.chartConfig = {
-               options: {
-                   chart: {
-                       zoomType: 'x'
-                   },
-                   rangeSelector: {
-                       enabled: true
-                   },
-                   navigator: {
-                       enabled: true
-                   }
-               },
-               series: result.generation,
-               title: {
-                   text: 'Generation at inverter'
-               },
-               useHighStocks: true
-           };
-
-    });
-
-}])
+   }])
 
 ;
