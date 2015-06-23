@@ -2,20 +2,7 @@ angular.module('metro', [
   'ui.router',
   'ngAnimate',
   'listSites',
-  'displayProject',
-  'uiGmapgoogle-maps'
+  'routes',
+  'displayProject'
 ])
-
-.config(function($stateProvider, $urlRouterProvider) {
-  $stateProvider
-    .state('parent', {
-        url:'',
-        abstract: true
-    })
-  ;
-
-  $urlRouterProvider.otherwise('/');
-})
-
-
 ;
